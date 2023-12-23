@@ -1,0 +1,36 @@
+﻿@page
+@model blog.Pages.blogs.createModel
+@{
+}
+
+<div class="post-comment-form mt-20">
+    <h4 class="post-comment-form-title mb-40">ساخت مقاله</h4>
+    <form method="post">
+        <div class="input-field">
+            <i class="fal fa-pencil-alt"></i>
+            <input asp-for="Blog.Title" type="text" placeholder="عنوان مقاله">
+            <span asp-validation-for="Blog.Title" class="text-danger"></span>
+        </div>
+        <div class="input-field">
+            <i class="fal fa-user"></i>
+            <textarea asp-for="Blog.ShortDescription" placeholder="توضیح کوتاه"></textarea>
+            <span asp-validation-for="Blog.ShortDescription" class="text-danger"></span>
+        </div>
+        <div class="input-field">
+            <i class="fal fa-envelope"></i>
+            <textarea asp-for="Blog.Body" placeholder="توضیحات کامل"></textarea>
+            <span asp-validation-for="Blog.Body" class="text-danger"></span>
+        </div>
+        <div class="input-field">
+            <i class="fal fa-globe"></i>
+            <input asp-for="Blog.Img" type="text" placeholder="عکس">
+            <span asp-validation-for="Blog.Img" class="text-danger"></span>
+        </div>
+        <button type="submit" class="post-comment shutter-btn"><i class="fal fa-comments"></i>ارسال</button>
+    </form>
+</div>
+@section scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
